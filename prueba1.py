@@ -2,7 +2,7 @@ import pywt
 import numpy as np
 import matplotlib.pyplot as plt
 import time
-from scipy import signal
+#from scipy import signal
 import math
 #Variables para el calculo de caracteristicas
 min = 0.0
