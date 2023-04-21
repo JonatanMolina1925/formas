@@ -35,8 +35,8 @@ krd1 = 0.0
 krd2 = 0.0
 krd3 = 0.0
 krd4 = 0.0
-frecuencia=['3200','5000','6400','8000','9600']
-perturbacion='interrupcion.csv'
+frecuencia=['3200','5000','6400','8000','9600','15000','20000','30000']
+perturbacion='armonicos.csv'
 for j in frecuencia:
     #señal senoidal 
     x = np.loadtxt(j+'/SinRuido/'+perturbacion, delimiter=',')
