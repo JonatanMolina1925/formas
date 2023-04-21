@@ -36,7 +36,8 @@ krd2 = 0.0
 krd3 = 0.0
 krd4 = 0.0
 frecuencia='9600'
-perturbacion='interrupcion.csv'
+perturbacion='armonicos.csv'
+pqd='Armonicos'
 
 #señal senoidal 
 x = np.loadtxt(frecuencia+'/SinRuido/'+perturbacion, delimiter=',')
@@ -244,7 +245,7 @@ krd2=krd2/len(CD210)
 krd3=krd3/len(CD310)
 krd4=krd4/len(CD410)
 fin=time.time()
-print(str(fin-inicio)+" segundos, ruido 10DB\n")
+print(str(fin-inicio)+" segundos, SBR = 10DB\n")
 
 
 ############################ Ruido de 20 DB ########################################
@@ -361,7 +362,7 @@ krd2=krd2/len(CD220)
 krd3=krd3/len(CD320)
 krd4=krd4/len(CD420)
 fin=time.time()
-print(str(fin-inicio)+" segundos, ruido 20DB\n")
+print(str(fin-inicio)+" segundos, SNR = 20DB\n")
 
 ############################ Ruido de 30 DB ########################################
 avgA = 0.0
@@ -477,7 +478,7 @@ krd2=krd2/len(CD230)
 krd3=krd3/len(CD330)
 krd4=krd4/len(CD430)
 fin=time.time()
-print(str(fin-inicio)+" segundos, ruido 30DB\n")
+print(str(fin-inicio)+" segundos, SNR = 30DB\n")
 
 
 #print("El promedio de cA es: "+str(avgA)+"\n")
@@ -517,13 +518,13 @@ print(str(fin-inicio)+" segundos, ruido 30DB\n")
 #print("La desviacion estandar de CD4 es: "+str(desEstd4)+"\n")
 
 plt.subplot(6,4,1), plt.plot(x)
-plt.title("Flicker sin ruido")
+plt.title(pqd+" sin ruido")
 plt.subplot(6,4,2), plt.plot(x10db)
-plt.title("Flicker con ruido 10DB")
+plt.title(pqd+" con SNR = 10DB")
 plt.subplot(6,4,3), plt.plot(x20db)
-plt.title("Flicker con ruido 20DB")
+plt.title(pqd+" con SNR = 20DB")
 plt.subplot(6,4,4), plt.plot(x30db)
-plt.title("Flicker con ruido 30DB")
+plt.title(pqd+" con SNR = 30DB")
 plt.subplot(6,4,5), plt.plot(cA)
 plt.subplot(6,4,6), plt.plot(cA10)
 plt.subplot(6,4,7), plt.plot(cA20)
