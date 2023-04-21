@@ -8,7 +8,7 @@ alfa=1;
 DB = 10;
 
 ################# Interrupcion ##############################################
-t=[0:(24*pi)/640:24*pi];
+t=[0:(24*pi)/6000:24*pi];
 xinterrupcion=A*(1-alfa*(((t-t1)>0)-((t-t2)>0))).*sin(t);
 xruido=awgn(xinterrupcion,DB,'measured');
 #energia1=(xinterrupcion*xinterrupcion')/length(xinterrupcion);
